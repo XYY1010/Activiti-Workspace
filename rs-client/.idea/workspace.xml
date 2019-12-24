@@ -8,6 +8,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -40,6 +47,68 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Application.DeleteDeployment">
+    <configuration name="DeleteDeployment" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.crazyit.activiti.rest.DeleteDeployment" />
+      <module name="rs-client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.crazyit.activiti.rest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueryResource" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.crazyit.activiti.rest.QueryResource" />
+      <module name="rs-client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.crazyit.activiti.rest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueryResources" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.crazyit.activiti.rest.QueryResources" />
+      <module name="rs-client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.crazyit.activiti.rest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestDeployment" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.crazyit.activiti.rest.TestDeployment" />
+      <module name="rs-client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.crazyit.activiti.rest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DeleteDeployment" />
+        <item itemvalue="Application.QueryResource" />
+        <item itemvalue="Application.QueryResources" />
+        <item itemvalue="Application.TestDeployment" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -50,7 +119,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1577149185929</updated>
-      <workItem from="1577149187684" duration="1309000" />
+      <workItem from="1577149187684" duration="5011000" />
     </task>
     <servers />
   </component>
