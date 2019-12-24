@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="cxf-client">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/cxf-core-3.1.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/cxf-rt-frontend-jaxrs-3.1.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/cxf-rt-rs-client-3.1.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/cxf-rt-transports-http-3.1.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.annotation-api-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.ws.rs-api-2.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/stax2-api-3.1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/woodstox-core-asl-4.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xmlschema-core-2.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
