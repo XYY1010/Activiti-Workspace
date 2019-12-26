@@ -1,0 +1,32 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <!-- 配置一个测试的 Action -->
+    <package name="base" extends="struts-default">
+        <!-- 配置 BaseAction -->
+        <action name="base" class="org.crazyit.activiti.oa.action.BaseAction"
+                method="test">
+            <result name="success">/pages/test.html</result>
+        </action>
+    </package>
+
+    <package name="group" extends="struts-default">
+        <global-allowed-methods>regex:.*</global-allowed-methods>
+        <action name="group-*" class="groupAction" method="{1}">
+            <result name="success">/pages/group/group.jsp</result>
+        </action>
+    </package>
+
+    <package name="user" extends="struts-default">
+        <global-allowed-methods>regex:.*</global-allowed-methods>
+        <action name="user-*" class="userAction" method="{1}">
+            <result name="success">/pages/user/user.jsp</result>
+            <result name="openAddUser">/pages/user/addUser.jsp</result>
+            <result name="add" type="redirect">user-list.action</result>
+            <result name="delete" type="redirect">user-list.action</result>
+            <result name="loginSuccess" type="redirect">/index.jsp</result>
+            <result name="loginFail">/login.jsp</result>
+        </action>
+    </package>
+</struts>
