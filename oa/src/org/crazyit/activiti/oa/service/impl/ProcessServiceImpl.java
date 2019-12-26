@@ -10,6 +10,9 @@ import org.activiti.engine.runtime.Execution;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Comment;
 import org.activiti.engine.task.Task;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.crazyit.activiti.oa.action.ProcessAction;
 import org.crazyit.activiti.oa.action.bean.*;
 import org.crazyit.activiti.oa.dao.ApplicationDao;
 import org.crazyit.activiti.oa.entity.ExpenseAccount;
@@ -29,6 +32,8 @@ import java.util.*;
  * @Date: 2019/12/25 10:56
  */
 public class ProcessServiceImpl implements ProcessService {
+
+    static Log logger = LogFactory.getLog(ProcessServiceImpl.class);
 
     private RuntimeService runtimeService;
 
@@ -69,6 +74,7 @@ public class ProcessServiceImpl implements ProcessService {
     // 启动请假流程
     @Override
     public ProcessInstance startVacation(VacationForm vacationForm) {
+        logger.info("vacationForm: " + vacationForm.getUserId());
         // 设置标题
         vacationForm.setTitle(vacationForm.getUserName() + "的请假申请");
         vacationForm.setBusinessType("请假申请");
@@ -97,6 +103,7 @@ public class ProcessServiceImpl implements ProcessService {
 
     // 将一条请假申请保存到 OA_VACATION 表中
     private void saveVacation(VacationForm vacationForm, String piId) {
+        logger.info("VacationType: " + vacationForm.getVacationType());
         Vacation vacation = new Vacation();
         vacation.setBeginDate(DateUtil.getDate(vacationForm.getStartDate()));
         vacation.setDays(vacationForm.getDays());
@@ -104,7 +111,7 @@ public class ProcessServiceImpl implements ProcessService {
         vacation.setProcessInstanceId(piId);
         vacation.setReason(vacationForm.getReason());
         vacation.setVacationType(vacationForm.getVacationType());
-        vacation.setUserId(vacation.getUserId());
+        vacation.setUserId(vacationForm.getUserId());
         this.applicationDao.saveVacation(vacation);
     }
 

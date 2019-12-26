@@ -2,10 +2,13 @@ package org.crazyit.activiti.oa.action;
 
 import org.activiti.engine.identity.Group;
 import org.activiti.engine.identity.User;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.struts2.ServletActionContext;
 import org.crazyit.activiti.oa.action.bean.UserVO;
 import org.crazyit.activiti.oa.service.GroupService;
 import org.crazyit.activiti.oa.service.UserService;
+import org.crazyit.activiti.oa.util.DateUtil;
 
 import java.util.List;
 
@@ -14,6 +17,8 @@ import java.util.List;
  * @Date: 2019/12/24 16:25
  */
 public class UserAction extends BaseAction {
+
+    static Log logger = LogFactory.getLog(UserAction.class);
 
     private UserService userService;
 
@@ -117,6 +122,7 @@ public class UserAction extends BaseAction {
             // 将用户组放到 session 中
             Group group = this.userService.getGroup(user.getId());
             ServletActionContext.getContext().getSession().put("group", group);
+            logger.info("userId: " + user.getId());
             return "loginSuccess";
         } else {
             this.loginMsg = "用户名或密码错误";

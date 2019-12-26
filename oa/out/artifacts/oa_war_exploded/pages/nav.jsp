@@ -20,8 +20,10 @@
     <ul id="nav">
         <li><a href="#" onclick="clickNav(this);return false;" class="parent" id="1"><h5><strong>用户功能</strong></h5></a>
             <ul id="opt_1" class="child_area">
-                <li class="last"><a href="${ctx}/process-listProcessInstance.action?processType=vacation" target="mainFrame"><h6>申请查看</h6></a></li>
-                <li class="last"><a href="${ctx}/process-listTask.action?taskType=candidate" target="mainFrame"><h6>我的任务</h6></a></li>
+                <li class="last"><a
+                        href="${ctx}/process-listProcessInstance.action?processType=vacation" target="mainFrame"><h6>申请查看</h6></a></li>
+                <li class="last"><a
+                        href="${ctx}/process-listTask.action?taskType=candidate" target="mainFrame"><h6>我的任务</h6></a></li>
                 <li class="last"><a href="vacation/vacation.jsp" target="mainFrame"><h6>请假</h6></a></li>
                 <li class="last"><a href="finance/expenseAccount.jsp" target="mainFrame"><h6>报捎</h6></a></li>
                 <li class="last"><a href="salary/salaryAdjust.jsp" target="mainFrame"><h6>薪资调整</h6></a></li>
@@ -32,7 +34,8 @@
             <ul id="opt_15" class="child_area">
                 <li class="last"><a href="${ctx}/group-list.action" target="mainFrame"><h6>用户组管理</h6></a></li>
                 <li class="last"><a href="${ctx}/user-list.action" target="mainFrame"><h6>用户管理</h6></a></li>
-                <li class="last"><a href="${ctx}/pd-list.action" target="mainFrame"><h6>流程定义 </h6></a></li>
+                <li class="last"><a href="${ctx}/pd-list.action"
+                                    target="mainFrame"><h6>流程定义 </h6></a></li>
             </ul>
         </li>
     </ul>

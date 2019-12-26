@@ -1,15 +1,14 @@
 package org.crazyit.activiti.oa.entity;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
  * @Author: xyy
  * @Date: 2019/12/24 14:11
  */
+@Entity
+@Table(name = "OA_VACATION")
 public class Vacation {
     // 带薪假
     public final static int TYPE_PAID = 0;

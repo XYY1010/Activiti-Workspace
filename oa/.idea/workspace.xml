@@ -50,6 +50,7 @@
         <option value="spring-beans.schema" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JavaScript File" />
         <option value="Jsp File" />
       </list>
     </option>
@@ -71,18 +72,24 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web/images" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.crazyit.activiti.oa.service.impl" />
+      <recent name="org.crazyit.activiti.oa.dao.impl" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\xyy-code\Activiti-Workspace\oa\web\images" />
       <recent name="D:\xyy-code\Activiti-Workspace\oa\lib" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="org.crazyit.activiti.oa.dao.impl" />
-      <recent name="org.crazyit.activiti.oa.service.impl" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xyy-code\Activiti-Workspace\oa\web\pages" />
+      <recent name="D:\xyy-code\Activiti-Workspace\oa\web\js" />
+      <recent name="D:\xyy-code\Activiti-Workspace\oa\web\pages\vacation" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -200,7 +207,8 @@
       <updated>1577155752159</updated>
       <workItem from="1577155759656" duration="19772000" />
       <workItem from="1577232643085" duration="23284000" />
-      <workItem from="1577263690098" duration="7420000" />
+      <workItem from="1577263690098" duration="25835000" />
+      <workItem from="1577342790787" duration="5938000" />
     </task>
     <servers />
   </component>
@@ -219,5 +227,21 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/org/crazyit/activiti/oa/service/impl/ProcessServiceImpl.java</url>
+          <line>220</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/org/crazyit/activiti/oa/action/ProcessAction.java</url>
+          <line>230</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -2,9 +2,12 @@ package org.crazyit.activiti.oa.action;
 
 import org.activiti.engine.identity.User;
 import org.activiti.engine.runtime.ProcessInstance;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.struts2.ServletActionContext;
 import org.crazyit.activiti.oa.action.bean.*;
 import org.crazyit.activiti.oa.service.ProcessService;
+import org.crazyit.activiti.oa.util.DateUtil;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
@@ -15,6 +18,8 @@ import java.util.List;
  * @Date: 2019/12/25 17:10
  */
 public class ProcessAction extends BaseAction {
+
+    static Log logger = LogFactory.getLog(ProcessAction.class);
 
     private ProcessService processService;
 
@@ -32,9 +37,9 @@ public class ProcessAction extends BaseAction {
 
     private String errorMsg;
 
-    private List<ProcessVO> processVOs;
+    private List<ProcessVO> processes;
 
-    private List<TaskVO> taskVOs;
+    private List<TaskVO> tasks;
 
     private String taskId;
 
@@ -105,20 +110,20 @@ public class ProcessAction extends BaseAction {
         this.errorMsg = errorMsg;
     }
 
-    public List<ProcessVO> getProcessVOs() {
-        return processVOs;
+    public List<ProcessVO> getProcesses() {
+        return processes;
     }
 
-    public void setProcessVOs(List<ProcessVO> processVOs) {
-        this.processVOs = processVOs;
+    public void setProcesses(List<ProcessVO> processes) {
+        this.processes = processes;
     }
 
-    public List<TaskVO> getTaskVOs() {
-        return taskVOs;
+    public List<TaskVO> getTasks() {
+        return tasks;
     }
 
-    public void setTaskVOs(List<TaskVO> taskVOs) {
-        this.taskVOs = taskVOs;
+    public void setTasks(List<TaskVO> tasks) {
+        this.tasks = tasks;
     }
 
     public String getTaskId() {
@@ -163,6 +168,7 @@ public class ProcessAction extends BaseAction {
 
     // 启动请假流程
     public String startVacation() {
+        logger.info("vacationForm: " + this.vacationForm);
         ProcessInstance pi =
                 this.processService.startVacation(this.vacationForm);
         this.processType = BaseForm.VACATION;
@@ -195,14 +201,15 @@ public class ProcessAction extends BaseAction {
         User user =
                 (User) ServletActionContext.getContext().getSession().get(
                         "user");
+        logger.info("processType: " + this.processType);
         // 获取流程类型
         if (BaseForm.VACATION.equals(this.processType)) {
-            this.processVOs = this.processService.listVacation(user.getId());
+            this.processes = this.processService.listVacation(user.getId());
         } else if (BaseForm.EXPENSE.equals(this.processType)) {
-            this.processVOs =
+            this.processes =
                     this.processService.listExpenseAccount(user.getId());
         } else if (BaseForm.SALARY.equals(this.processType)) {
-            this.processVOs =
+            this.processes =
                     this.processService.listSalaryAdjust(user.getId());
         }
         return "listProcessInstance";
@@ -216,10 +223,10 @@ public class ProcessAction extends BaseAction {
                         "user");
         if(TaskVO.CANDIDATE.equals(this.taskType)) {
             // 查询待办任务
-            this.taskVOs = this.processService.listTasks(user.getId());
+            this.tasks = this.processService.listTasks(user.getId());
         } else if (TaskVO.ASSIGNEE.equals(this.taskType)) {
             //查询受理任务
-            this.taskVOs = this.processService.listAssigneeTasks(user.getId());
+            this.tasks = this.processService.listAssigneeTasks(user.getId());
         }
         return "listTask";
     }
